@@ -1,0 +1,125 @@
+/* Base styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-blue: #003B6D;
+    --primary-green: #4CAF50;
+    --transition-speed: 0.3s;
+}
+
+.bg-gradient {
+    background: linear-gradient(120deg, var(--primary-blue), var(--primary-green));
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Navigation */
+.nav-link {
+    @apply text-gray-700 hover:text-primary transition-colors duration-300 px-3 py-2 text-sm font-medium;
+}
+
+.nav-link.active {
+    @apply text-primary font-semibold;
+}
+
+.mobile-link {
+    @apply block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-primary transition-colors duration-300;
+}
+
+/* Buttons */
+.btn-primary {
+    @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors duration-300;
+}
+
+.btn-secondary {
+    @apply inline-flex items-center px-6 py-3 border border-primary text-base font-medium rounded-md text-primary hover:bg-primary hover:text-white transition-colors duration-300;
+}
+
+/* Hero Section */
+.hero {
+    @apply relative overflow-hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), var(--primary-blue);
+}
+
+.hero-slider {
+    @apply relative w-full h-full;
+}
+
+.slide {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+}
+
+.slide.active {
+    @apply opacity-100;
+}
+
+/* Feature Boxes */
+.feature-box {
+    @apply bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-1 transition-transform duration-300;
+}
+
+/* Product Cards */
+.product-card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300;
+}
+
+/* Blog Cards */
+.blog-card {
+    @apply bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-1 transition-transform duration-300;
+}
+
+/* Form Elements */
+.form-input {
+    @apply w-full px-4 py-3 rounded-md border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-colors duration-300;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        @apply text-3xl;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-blue);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-green);
+}
