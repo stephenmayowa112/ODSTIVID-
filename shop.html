@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products & Services - Odstivid Agrotech Enterprise</title>
+    <title>Shop - Odstivid Agrotech Enterprise</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -82,32 +82,50 @@
     <!-- Page Header -->
     <section class="pt-32 pb-20 text-center">
         <div class="max-w-7xl mx-auto px-4">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Products & Services</h1>
-            <p class="text-xl text-white mb-8">Discover our range of quality agricultural solutions</p>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Shop</h1>
+            <p class="text-xl text-white mb-8">Browse our quality products and request quotes</p>
         </div>
     </section>
 
-    <!-- Products Grid -->
+    <!-- Shop Content -->
     <section class="bg-white py-20">
         <div class="max-w-7xl mx-auto px-4">
-            <!-- Product Categories -->
-            <div class="flex justify-center mb-12">
-                <div class="inline-flex rounded-md shadow-sm">
-                    <button class="category-btn active">All Products</button>
-                    <button class="category-btn">Animal Feed</button>
-                    <button class="category-btn">Husbandry Services</button>
+            <!-- Filters and Search -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="flex space-x-4 mb-4 md:mb-0">
+                    <select class="form-select">
+                        <option>All Categories</option>
+                        <option>Poultry Feed</option>
+                        <option>Livestock Feed</option>
+                    </select>
+                    <select class="form-select">
+                        <option>Sort by</option>
+                        <option>Newest</option>
+                        <option>Popular</option>
+                    </select>
+                </div>
+                <div class="relative">
+                    <input type="text" placeholder="Search products..." class="form-input pr-10">
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
                 </div>
             </div>
 
-            <!-- Products -->
+            <!-- Products Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Product Card -->
                 <div class="product-card">
                     <img src="assets/images/product1.jpg" alt="Product" class="w-full h-48 object-cover rounded-t">
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Premium Poultry Feed</h3>
-                        <p class="text-gray-600 mb-4">High-quality feed for optimal poultry growth</p>
-                        <button class="btn-primary w-full">Request Quote</button>
+                        <p class="text-gray-600 mb-4">High-quality feed for optimal growth</p>
+                        <button class="btn-primary w-full" onclick="openInquiryModal('Premium Poultry Feed')">
+                            Request Quote
+                        </button>
                     </div>
                 </div>
                 <!-- Add more product cards -->
@@ -115,31 +133,35 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="bg-gray-50 py-20">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Our Services</h2>
-                <p class="text-gray-600">Comprehensive solutions for your agricultural needs</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Service Card -->
-                <div class="service-card">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4">Animal Husbandry</h3>
-                        <p class="text-gray-600 mb-4">Professional care and management services for your livestock</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>• Health monitoring and management</li>
-                            <li>• Breeding programs</li>
-                            <li>• Growth optimization</li>
-                        </ul>
-                        <button class="btn-secondary mt-6">Learn More</button>
-                    </div>
+    <!-- Inquiry Modal -->
+    <div id="inquiryModal" class="modal hidden">
+        <div class="modal-content">
+            <h3 class="text-2xl font-bold mb-4">Request Quote</h3>
+            <form id="inquiryForm" class="space-y-4">
+                <input type="hidden" id="productName">
+                <div>
+                    <label class="block text-gray-700 mb-2">Name</label>
+                    <input type="text" class="form-input" required>
                 </div>
-                <!-- Add more service cards -->
-            </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" class="form-input" required>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Phone</label>
+                    <input type="tel" class="form-input">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Message</label>
+                    <textarea class="form-input" rows="4" required></textarea>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" class="btn-secondary" onclick="closeInquiryModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </div>
+            </form>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">

@@ -10,8 +10,73 @@
 </head>
 
 <body class="bg-gradient font-sans">
-    <!-- Navigation (same as index.html) -->
-    <!-- Will be identical across all pages -->
+     <nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0">
+                    <img src="assets/images/logo.png" alt="Odstivid Agrotech" class="h-12">
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="products.html" class="nav-link">Products & Services</a>
+                    <a href="about.html" class="nav-link">About Us</a>
+                    <a href="blog.html" class="nav-link">Blog</a>
+                    <a href="shop.html" class="nav-link">Shop</a>
+                    <a href="contact.html" class="btn-primary">Contact Us</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" id="mobile-menu-button" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-50 md:hidden">
+                    <div class="flex flex-col h-full p-4">
+                        <div class="flex justify-end">
+                            <button class="p-2" id="mobile-menu-close" aria-label="Close menu">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="flex flex-col space-y-4 mt-8">
+                            <a href="index.html" class="nav-link active text-xl">Home</a>
+                            <a href="products.html" class="nav-link text-xl">Products & Services</a>
+                            <a href="about.html" class="nav-link text-xl">About Us</a>
+                            <a href="blog.html" class="nav-link text-xl">Blog</a>
+                            <a href="shop.html" class="nav-link text-xl">Shop</a>
+                            <a href="contact.html" class="btn-primary text-xl text-center mt-4">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', isOpen);
+            if (isOpen) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        mobileMenuButton.addEventListener('click', toggleMenu);
+        mobileMenuClose.addEventListener('click', toggleMenu);
+    </script>
 
     <!-- Page Header -->
     <section class="pt-32 pb-20 text-center">
@@ -88,7 +153,39 @@
         </div>
     </section>
 
-    <!-- Footer (same as index.html) -->
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <img src="assets/images/logo-white.png" alt="Odstivid Agrotech" class="h-12 mb-4">
+                <p class="text-gray-400">Your trusted partner in agricultural solutions</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                    <li><a href="products.html" class="text-gray-400 hover:text-white">Products</a></li>
+                    <li><a href="blog.html" class="text-gray-400 hover:text-white">Blog</a></li>
+                    <li><a href="contact.html" class="text-gray-400 hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li>1 Convenient Farms off Agbara-Atan Road</li>
+                    <li>Latikay Bus Stop, Lusada</li>
+                    <li>Ogun State, Nigeria</li>
+                    <li>Email: info@odstivid.com</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                    <!-- Social media icons -->
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="assets/js/main.js"></script>
 </body>

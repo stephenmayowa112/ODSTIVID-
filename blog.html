@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products & Services - Odstivid Agrotech Enterprise</title>
+    <title>Blog - Odstivid Agrotech Enterprise</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -82,61 +82,54 @@
     <!-- Page Header -->
     <section class="pt-32 pb-20 text-center">
         <div class="max-w-7xl mx-auto px-4">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Products & Services</h1>
-            <p class="text-xl text-white mb-8">Discover our range of quality agricultural solutions</p>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Our Blog</h1>
+            <p class="text-xl text-white mb-8">Latest insights and updates from our agricultural experts</p>
         </div>
     </section>
 
-    <!-- Products Grid -->
+    <!-- Blog Categories -->
+    <section class="bg-white py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="category-btn active">All Posts</button>
+                <button class="category-btn">Farming Tips</button>
+                <button class="category-btn">Product Information</button>
+                <button class="category-btn">Industry News</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
     <section class="bg-white py-20">
         <div class="max-w-7xl mx-auto px-4">
-            <!-- Product Categories -->
-            <div class="flex justify-center mb-12">
-                <div class="inline-flex rounded-md shadow-sm">
-                    <button class="category-btn active">All Products</button>
-                    <button class="category-btn">Animal Feed</button>
-                    <button class="category-btn">Husbandry Services</button>
-                </div>
-            </div>
-
-            <!-- Products -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Product Card -->
-                <div class="product-card">
-                    <img src="assets/images/product1.jpg" alt="Product" class="w-full h-48 object-cover rounded-t">
+                <!-- Blog Card -->
+                <article class="blog-card">
+                    <img src="assets/images/blog1.jpg" alt="Blog Post" class="w-full h-48 object-cover rounded-t">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Premium Poultry Feed</h3>
-                        <p class="text-gray-600 mb-4">High-quality feed for optimal poultry growth</p>
-                        <button class="btn-primary w-full">Request Quote</button>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <span>Jan 15, 2025</span>
+                            <span class="mx-2">•</span>
+                            <span>Farming Tips</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Effective Animal Feeding Practices</h3>
+                        <p class="text-gray-600 mb-4">Learn about the best practices in animal nutrition and feeding
+                            schedules...</p>
+                        <a href="#" class="btn-secondary">Read More</a>
                     </div>
-                </div>
-                <!-- Add more product cards -->
+                </article>
+                <!-- Add more blog cards -->
             </div>
-        </div>
-    </section>
 
-    <!-- Services Section -->
-    <section class="bg-gray-50 py-20">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4">Our Services</h2>
-                <p class="text-gray-600">Comprehensive solutions for your agricultural needs</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Service Card -->
-                <div class="service-card">
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4">Animal Husbandry</h3>
-                        <p class="text-gray-600 mb-4">Professional care and management services for your livestock</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li>• Health monitoring and management</li>
-                            <li>• Breeding programs</li>
-                            <li>• Growth optimization</li>
-                        </ul>
-                        <button class="btn-secondary mt-6">Learn More</button>
-                    </div>
-                </div>
-                <!-- Add more service cards -->
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+                <nav class="flex items-center space-x-2">
+                    <button class="pagination-btn">Previous</button>
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn">Next</button>
+                </nav>
             </div>
         </div>
     </section>
